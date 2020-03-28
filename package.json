@@ -13,6 +13,7 @@
   ],
   "license": "ISC",
   "dependencies": {
+    "@hapi/hapi": "^19.1.1",
     "dotenv": "^6.0.0",
     "jest": "^23.1.0",
     "node-fetch": "^2.2.0"
