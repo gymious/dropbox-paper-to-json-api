@@ -6,8 +6,8 @@ const fs = require("fs");
 
 const init = async () => {
   const server = Hapi.server({
-    port: 3000,
-    host: "localhost"
+    port: process.env.PORT || 3000,
+    host: process.env.HOST || "0.0.0.0"
   });
 
   server.route({
@@ -16,7 +16,7 @@ const init = async () => {
     handler: (request, h) => {
       return dbpMdToJson({
         accessToken: process.env.DROPBOX_ACCESS_TOKEN,
-        dbp_doc_id: request.query.docId,
+        dbp_doc_id: request.query.docId || process.env.DROPBOX_DOC_ID,
         // default for nested === true
         nested: true
       })
