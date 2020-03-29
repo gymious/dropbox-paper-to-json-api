@@ -2,7 +2,6 @@
 
 const Hapi = require("@hapi/hapi");
 const dbpMdToJson = require("./index");
-const fs = require("fs");
 
 const init = async () => {
   const server = Hapi.server({
